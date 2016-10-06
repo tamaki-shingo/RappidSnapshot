@@ -22,9 +22,9 @@ class AnnouncementViewController: UIViewController {
     }
     
 
-    @IBAction func returnActionForSegue(segue: UIStoryboardSegue) {
+    @IBAction func returnActionForSegue(_ segue: UIStoryboardSegue) {
         debugPrint(#function)
-        performSegueWithIdentifier("ExitAnnouncement", sender: self)
+        performSegue(withIdentifier: "ExitAnnouncement", sender: self)
     }
 
 }

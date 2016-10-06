@@ -14,33 +14,33 @@ class TopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.nextButton.hidden = true
+        self.nextButton.isHidden = true
 
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         if let status = appDelegate.appStatus {
             switch status {
             case .LOGIN:
-                self.nextButton.hidden = false
+                self.nextButton.isHidden = false
                 break
             case .LOGOUT:
-                performSegueWithIdentifier("LoginSegue", sender: self )
+                performSegue(withIdentifier: "LoginSegue", sender: self )
             case .SUSPEND:
-                performSegueWithIdentifier("SuspendSegue", sender: self )
+                performSegue(withIdentifier: "SuspendSegue", sender: self )
             }
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         debugPrint(#function)
     }
     
-    @IBAction func returnActionForSegue(segue: UIStoryboardSegue) {
+    @IBAction func returnActionForSegue(_ segue: UIStoryboardSegue) {
         guard let identifier = segue.identifier else { return }
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         switch identifier {
         case "ExitLogin":

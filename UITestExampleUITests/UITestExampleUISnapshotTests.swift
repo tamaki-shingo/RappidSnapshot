@@ -28,9 +28,7 @@ class UITestExampleUISnapshotTests: XCTestCase {
         app.textFields["login_id"].tap()
         app.textFields["login_id"].typeText("goal-star")
         app.secureTextFields["login_pass"].tap()
-        UIPasteboard.generalPasteboard().string = "abc"
-        app.secureTextFields["login_pass"].doubleTap()
-        app.menuItems["Paste"].tap()
+        app.secureTextFields["login_pass"].typeText("abc")
         app.buttons["login_button"].tap()
         app.buttons["next_announce"].tap()
         app.textViews["text_apology"].tap()

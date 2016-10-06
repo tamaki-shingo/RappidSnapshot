@@ -22,13 +22,13 @@ class UITestExampleUIRapidSnapshotTests: XCTestCase {
         
         var app = XCUIApplication()
         setupSnapshot(app)
-        app.launchArguments.appendContentsOf(["-rootViewController", "top", "-appStatus", AppStatusType.LOGIN.rawValue])
+        app.launchArguments.append(contentsOf: ["-rootViewController", "top", "-appStatus", AppStatusType.LOGIN.rawValue])
         app.launch()
         snapshot("topView")
         app.terminate()
         
         app = XCUIApplication()
-        app.launchArguments.appendContentsOf(["-rootViewController", "content_3", "-appStatus", AppStatusType.LOGIN.rawValue])
+        app.launchArguments.append(contentsOf: ["-rootViewController", "content_3", "-appStatus", AppStatusType.LOGIN.rawValue])
         app.launch()
         snapshot("lastView")
         app.terminate()

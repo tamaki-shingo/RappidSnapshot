@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didPushedLoginButton(sender: AnyObject) {
+    @IBAction func didPushedLoginButton(_ sender: AnyObject) {
     }
 
     /*
